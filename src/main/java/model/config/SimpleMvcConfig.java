@@ -63,5 +63,8 @@ public class SimpleMvcConfig implements WebMvcConfigurer{
 		 registry.addResourceHandler("/resource/**").addResourceLocations("/WEB-INF/static/");
 	}
 	
-	
+	@Override
+	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+		resolvers.add(new BooleanHandlerMethodArgumentResolver());
+	}
 }
